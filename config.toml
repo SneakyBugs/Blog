@@ -1,0 +1,36 @@
+baseURL = "https://gohugo.io"
+title = "Hugo Themes"
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+theme = "sneakybugs"
+taxonomies = []
+disableKinds = ["section"]
+pygmentsUseClasses = true
+
+[menu]
+[[menu.footer]]
+  name = "Fusce Tincidunt"
+  url = "https://github.com/LKummer"
+
+[params]
+[params.author]
+  name = "Lior Kummer"
+  url = "https://sneakybugs.com"
+[params.seo]
+  description = "Lorem ipsum dolor sit amet."
+  twitterCard = "summary_large_image"
+[params.seo.images]
+  ogPath = "images/1x1.png"
+  ldPaths = [
+    "images/1x1.png",
+    "images/4x3.png",
+    "images/16x9.png"
+  ]
+[params.footer]
+  aboutTitle = "Lorem ipsum dolor sit amet?"
+  aboutText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit pharetra eros sollicitudin accumsan. Sed maximus quam non blandit iaculis. Phasellus at varius magna."
+  aboutExtra = "Ut blandit orci sed velit lobortis, et ornare nisl fringilla. In hac habitasse platea dictumst."
+  menuTitle = "Lorem ipsum dolor."

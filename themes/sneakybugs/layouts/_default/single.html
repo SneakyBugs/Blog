@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1 class="content-title">{{ .Title }}</h1>
+<span class="content-date">
+    {{ .Date | time.Format "January" }}
+    {{ .Date | time.Format "2" | humanize }},
+    {{ .Date | time.Format "2006" }}
+</span>
+<section class="content">
+    {{ .Content }}
+</section>
+{{ end }}

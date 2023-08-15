@@ -1,0 +1,27 @@
+{{ define "main" }}
+<nav>
+  <ul class="list">
+    {{ range .Pages }}
+    <li>
+      <a class="list-item" href="{{ .Permalink }}">
+        {{- with .Params.avatar }}
+        {{ partial (printf "images/avatar-%s" .) . }}
+        {{- else }}
+        {{ partial "images/avatar" . }}
+        {{- end }}
+        <article class="list-item-comment">
+          <h2 class="list-item-comment-title">
+            {{ .Name }}
+          </h2>
+          <span class="list-item-comment-date">
+            {{ .Date | time.Format "January" }}
+            {{ .Date | time.Format "2" | humanize }},
+            {{ .Date | time.Format "2006" }}
+          </span>
+        </article>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}

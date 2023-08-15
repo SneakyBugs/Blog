@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="{{ absURL "main.css" }}">
+    <title>{{ .Title }}</title>
+    {{ partial "seo" . }}
+  </head>
+  <body class="l-footer-wrapper">
+    <header class="l-toplogo-wrapper">
+      <a class="l-toplogo-link" href="{{ .Site.Home.Permalink }}">
+        {{ partial "images/top-logo" }}
+      </a>
+    </header>
+    <main class="l-footer-grow l-container">
+      {{- block "main" . }}{{- end }}
+    </main>
+    <footer class="l-footer footer-wrapper">
+      <section class="l-container footer">
+        <a href="{{ .Site.Home.Permalink }}" class="footer-title">
+          {{ partial "images/footer-logo" . }}
+          <h1 class="footer-title-text">
+            {{ .Site.Title }}
+          </h1>
+        </a>
+        <section class="l-footer-sections">
+          <section>
+            <h2 class="footer-about-title">
+              {{ .Site.Params.footer.aboutTitle }}
+            </h2>
+            <p class="footer-about-text">
+              {{ .Site.Params.footer.aboutText }}
+            </p>
+            <p class="footer-about-text footer-about-text-dark">
+              {{ .Site.Params.footer.aboutExtra }}
+            </p>
+          </section>
+          <section>
+            <h2 class="footer-links-title">
+              {{ .Site.Params.footer.menuTitle }}
+            </h2>
+            <nav>
+              <ul class="footer-links-list">
+                {{ range .Site.Menus.footer }}
+                <li>
+                  <a href="{{ .URL }}" class="footer-links-list-item">
+                    {{ .Name }}
+                  </a>
+                </li>
+                {{ end }}
+              </ul>
+            </nav>
+          </section>
+        </section>
+      </section>
+    </footer>
+    <script src='{{ absURL "main.js" }}'></script>
+  </body>
+</html>

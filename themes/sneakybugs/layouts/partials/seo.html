@@ -1,0 +1,42 @@
+{{- $description := .Description | default .Site.Params.seo.description }}
+<meta name="description" content="{{ $description }}">
+{{- with .Site.Params.seo.twitterCard }}
+<meta name="twitter:card" content="{{ . }}" />
+{{- end }}
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ $description }}" />
+{{- $ogImage := resources.Get .Site.Params.seo.images.ogPath }}
+{{- if isset .Params.images "ogpath" }}
+{{- $ogImage = .Resources.Get .Params.images.ogPath }}
+{{- end }}
+<meta property="og:image" content="{{ $ogImage.Permalink }}" />
+<meta property="og:image:height" content="{{ $ogImage.Height }}" />
+<meta property="og:image:width" content="{{ $ogImage.Width }}" />
+{{- if .IsPage }}
+<meta property="og:type" content="article" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ .Title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author.name }}",
+    "url": "{{ .Site.Params.author.url }}"
+  },
+  {{- $page := . }}
+  {{- $ldImages := slice }}
+  {{- if isset .Params.images "ldpaths" }}
+  {{- range .Params.images.ldPaths }}
+  {{- $ldImages = $ldImages | append ($page.Resources.Get .).Permalink }}
+  {{- end }}
+  {{- else }}
+  {{- range .Site.Params.seo.images.ldPaths }}
+  {{- $ldImages = $ldImages | append (resources.Get .).Permalink }}
+  {{- end }}
+  {{- end }}
+  "image": {{ $ldImages }}
+}
+</script>
+{{- end }}
