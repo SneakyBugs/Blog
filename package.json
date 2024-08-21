@@ -1,0 +1,15 @@
+{
+  "name": "sneakybugs-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hugo server",
+    "build": "hugo"
+  },
+  "author": "Lior Kummer",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "hugo-bin": "^0.102.0"
+  }
+}
