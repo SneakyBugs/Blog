@@ -1,5 +1,5 @@
-baseURL = "https://gohugo.io"
-title = "Hugo Themes"
+baseURL = "https://blog.sneakybugs.com"
+title = "Sneaky Bugs"
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
@@ -12,15 +12,18 @@ pygmentsUseClasses = true
 
 [menu]
 [[menu.footer]]
-  name = "Fusce Tincidunt"
+  name = "GitHub"
   url = "https://github.com/LKummer"
+[[menu.footer]]
+  name = "LinkedIn"
+  url = "https://www.linkedin.com/in/lior-friedman-b0509b2aa/"
 
 [params]
 [params.author]
-  name = "Lior Kummer"
+  name = "Lior Friedman"
   url = "https://sneakybugs.com"
 [params.seo]
-  description = "Lorem ipsum dolor sit amet."
+  description = "Tech blog focusing on web development. Covers everything from frontend, to backend, to infrastructure."
   twitterCard = "summary_large_image"
 [params.seo.images]
   ogPath = "images/1x1.png"
@@ -30,7 +33,7 @@ pygmentsUseClasses = true
     "images/16x9.png"
   ]
 [params.footer]
-  aboutTitle = "Lorem ipsum dolor sit amet?"
-  aboutText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit pharetra eros sollicitudin accumsan. Sed maximus quam non blandit iaculis. Phasellus at varius magna."
-  aboutExtra = "Ut blandit orci sed velit lobortis, et ornare nisl fringilla. In hac habitasse platea dictumst."
-  menuTitle = "Lorem ipsum dolor."
+  aboutTitle = "What's with the hedgehog?"
+  aboutText = "I am Lior, since I remember myself I had a passion for making stuff. I take interest in anything that can improve my projects; from frontend, to backend, to infrastructure technologies."
+  aboutExtra = "This website values your privacy and does not use invasive analytics."
+  menuTitle = "More from me"
