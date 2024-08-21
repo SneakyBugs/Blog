@@ -16,7 +16,7 @@ You probably know the drill.
 Terraform is great for resource provisioning, and Ansible is great for configuration management.
 A very common workflow is to combine both to automatically provision and configure virtual machines.
 Terraform is used to provision virtual machines, and Ansible is then used to configure them.
-However, for this to work you need to *define Ansible inventory based on Terraform outputs*.
+However, in order for this to work you need to *define Ansible inventory based on Terraform outputs*.
 
 If you go around searching for ways to populate Ansible inventory from Terraform, you'd mostly see solutions templating inventory files.
 Templating and inventory scripts based solutions are outdated at this point.
@@ -27,7 +27,7 @@ Later on in 2023 Red Hat released [a Terraform provider for Ansible](https://reg
 and [a matching inventory plugin](https://github.com/ansible-collections/cloud.terraform/blob/main/docs/cloud.terraform.terraform_provider_inventory.rst)
 for defining inventory as Terraform resources.
 
-I'm migrating from my custom inventory plugins to this new official inventory plugin and Terraform provider duo, and it felt like there's not enough information about it around.
+I'm migrating from my custom inventory plugins to this new official inventory plugin and Terraform provider duo, and it feels like there's not enough information about it around.
 
 ## The instructions
 
