@@ -7,7 +7,7 @@
     "dev": "hugo server",
     "build": "hugo"
   },
-  "author": "Lior Kummer",
+  "author": "Lior Friedman",
   "license": "GPL-3.0",
   "devDependencies": {
     "hugo-bin": "^0.102.0"
