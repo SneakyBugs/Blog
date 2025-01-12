@@ -1,5 +1,5 @@
 ---
-title: Implementing LoadBalancer services on Cluster API KubeVirt clusters using Cloud Provider KubeVirt
+title: 'Cluster API to production: implementing LoadBalancer services on Cluster API KubeVirt clusters'
 date: 2025-01-09
 description: Had trouble getting load balancer services working on Cluster API KubeVirt clusters? This guide will get you sorted out.
 avatar: tie-blue
