@@ -6,9 +6,11 @@ enableInlineShortcodes = true
 footnoteReturnLinkContents = "^"
 
 theme = "sneakybugs"
-taxonomies = []
-disableKinds = ["section"]
+disableKinds = ["section", "taxonomy"]
 pygmentsUseClasses = true
+
+[taxonomies]
+  series = "series"
 
 [menu]
 [[menu.footer]]

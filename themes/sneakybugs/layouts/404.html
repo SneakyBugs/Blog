@@ -1,1 +1,11 @@
-{{ define "main" }} {{ end }}
+{{ define "main" }}
+<h1 class="error-title">
+  This page does not exist, maybe it's a bug?
+</h1>
+<img src="{{ absURL "images/404.svg" }}"/>
+<nav>
+  <a class="error-link" href="{{ absURL "/" }}">
+    Go back to the blog
+  </a>
+</nav>
+{{ end }}

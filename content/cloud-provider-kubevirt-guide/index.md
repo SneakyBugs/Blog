@@ -2,6 +2,7 @@
 title: 'Cluster API to production: implementing LoadBalancer services on Cluster API KubeVirt clusters'
 date: 2025-01-09
 description: Had trouble getting load balancer services working on Cluster API KubeVirt clusters? This guide will get you sorted out.
+series: capi-to-production
 avatar: tie-blue
 images:
   ogPath: 1x1.png
@@ -14,7 +15,7 @@ images:
 This article is the beginning of a series on taking Cluster API managed clusters
 on KubeVirt from where the documentation leaves you to fully functioning
 production clusters.
-Make sure to check out the next parts in the future.
+Make sure [to check out the next parts.](#series-footer)
 
 Recently I've been moving my personal infrastructure to Kubernetes clusters
 managed by Cluster API on KubeVirt.

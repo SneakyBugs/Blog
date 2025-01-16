@@ -6,9 +6,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     />
-    <link rel="stylesheet" href="{{ absURL "main.css" }}">
-    <title>{{ .Title }}</title>
-    {{ partial "seo" . }}
+    <link rel="stylesheet" href="{{ absURL "main.css" }}"/>
+    <link rel="icon" href="{{ absURL "images/favicon.svg" }}" />
+    {{- $site := .Site }}
+    {{- with .Title }}
+    <title>{{ . }} | {{ $site.Title }}</title>
+    {{- else }}
+    <title>{{ .Site.Title }}</title>
+    {{- end }}
+    {{- partial "seo" . -}}
   </head>
   <body class="l-footer-wrapper">
     <header class="l-toplogo-wrapper">
