@@ -1,33 +1,33 @@
 {{ define "main" }}
 <h1 class="content-title">{{ .Title }}</h1>
-{{ $page := . }}
-{{ $series := collections.Index (.GetTerms "series") 0 }}
-{{ $currentPageNumber := -1 }}
-{{ if $series }}
-  {{ $taxonomy := index .Site.Taxonomies.series $series.Data.Term }}
-  {{ range seq (len $taxonomy.Pages) }}
-    {{ if eq $page (index $taxonomy.Pages.ByDate (sub . 1))}}
-      {{ $currentPageNumber = . }}
-    {{ end }}
-  {{ end }}
+{{- $page := . }}
+{{- $series := collections.Index (.GetTerms "series") 0 }}
+{{- $currentPageNumber := -1 }}
+{{- if $series }}
+  {{- $taxonomy := index .Site.Taxonomies.series $series.Data.Term }}
+  {{- range seq (len $taxonomy.Pages) }}
+    {{- if eq $page (index $taxonomy.Pages.ByDate (sub . 1))}}
+      {{- $currentPageNumber = . }}
+    {{- end }}
+  {{- end }}
 <h2 class="content-subtitle">
   Part {{ $currentPageNumber }} of
   <a class="content-subtitle-link" href="#series-footer">
     {{ $series.Title }}
   </a>
 </h2>
-{{ end }}
+{{- end }}
 <span class="content-date">
   {{ .Date | time.Format "January" }}
   {{ .Date | time.Format "2" | humanize }},
   {{ .Date | time.Format "2006" }}
 </span>
 <section class="content">
-  {{ .Content }}
+  {{ .Content -}}
 </section>
-{{ if $series }}
+{{- if $series }}
 <section class="series-footer" id="series-footer">
-  {{ $taxonomy := index .Site.Taxonomies.series $series.Data.Term }}
+  {{- $taxonomy := index .Site.Taxonomies.series $series.Data.Term }}
   <h2 class="series-footer-title">
     Part {{ $currentPageNumber }} of
     <span class="series-footer-name">
@@ -39,15 +39,15 @@
   </p>
   <nav aria-label="Article series navigation">
     <ol class="series-footer-list">
-      {{ range $taxonomy.Pages.ByDate }}
+      {{- range $taxonomy.Pages.ByDate }}
       <li class="series-footer-list-item">
           <a class="series-footer-list-link{{ if eq . $page }} series-footer-list-link-current{{ end }}" href="{{ .Permalink }}">
           {{ .Title }}
         </a>
       </li>
-      {{ end }}
+      {{- end }}
     </ol>
   </nav>
 </section>
-{{ end }}
-{{ end }}
+{{- end }}
+{{- end }}

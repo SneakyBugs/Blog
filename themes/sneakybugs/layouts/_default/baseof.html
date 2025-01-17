@@ -8,6 +8,9 @@
     />
     <link rel="stylesheet" href="{{ absURL "main.css" }}"/>
     <link rel="icon" href="{{ absURL "images/favicon.svg" }}" />
+    {{- with .OutputFormats.Get "rss" }}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{- end }}
     {{- $site := .Site }}
     {{- with .Title }}
     <title>{{ . }} | {{ $site.Title }}</title>
@@ -19,16 +22,16 @@
   <body class="l-footer-wrapper">
     <header class="l-toplogo-wrapper">
       <a class="l-toplogo-link" href="{{ .Site.Home.Permalink }}">
-        {{ partial "images/top-logo" }}
+        {{ partial "images/top-logo" -}}
       </a>
     </header>
     <main class="l-footer-grow l-container">
-      {{- block "main" . }}{{- end }}
+      {{- block "main" . }}{{- end -}}
     </main>
     <footer class="l-footer footer-wrapper">
       <section class="l-container footer">
         <a href="{{ .Site.Home.Permalink }}" class="footer-title">
-          {{ partial "images/footer-logo" . }}
+          {{ partial "images/footer-logo" . -}}
           <h1 class="footer-title-text">
             {{ .Site.Title }}
           </h1>
@@ -51,13 +54,13 @@
             </h2>
             <nav>
               <ul class="footer-links-list">
-                {{ range .Site.Menus.footer }}
+                {{- range .Site.Menus.footer }}
                 <li>
                   <a href="{{ .URL }}" class="footer-links-list-item">
                     {{ .Name }}
                   </a>
                 </li>
-                {{ end }}
+                {{- end }}
               </ul>
             </nav>
           </section>

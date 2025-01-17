@@ -1,14 +1,14 @@
 {{ define "main" }}
 <nav>
   <ul class="list">
-    {{ range .Pages }}
+    {{- range .Pages }}
     <li>
       <a class="list-item" href="{{ .Permalink }}">
-        {{- with .Params.avatar }}
-        {{ partial (printf "images/avatar-%s" .) . }}
-        {{- else }}
-        {{ partial "images/avatar" . }}
-        {{- end }}
+        {{ with .Params.avatar -}}
+        {{ partial (printf "images/avatar-%s" .) . -}}
+        {{ else -}}
+        {{ partial "images/avatar" . -}}
+        {{ end -}}
         <article class="list-item-comment">
           <h2 class="list-item-comment-title">
             {{ .Name }}
@@ -21,7 +21,7 @@
         </article>
       </a>
     </li>
-    {{ end }}
+    {{- end }}
   </ul>
 </nav>
 {{ end }}
