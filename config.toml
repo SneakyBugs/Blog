@@ -35,7 +35,8 @@ pygmentsUseClasses = true
     "images/16x9.png"
   ]
 [params.footer]
-  aboutTitle = "What's with the hedgehog?"
-  aboutText = "I am Lior, since I remember myself I had a passion for making stuff. I take interest in anything that can improve my projects; from frontend, to backend, to infrastructure technologies."
-  aboutExtra = "This website values your privacy and does not use invasive analytics."
+  aboutTitle = "Hi, I'm Lior"
+  aboutText = "I have a passion for making stuff since I remember myself. I take interest in anything that can improve my projects; from frontend, to backend, to infrastructure technologies."
+  # aboutExtra = "This website values your privacy and does not use invasive analytics."
+  aboutExtra = "This website values you. All content is human written."
   menuTitle = "More from me"
