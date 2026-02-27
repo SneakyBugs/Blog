@@ -1,6 +1,6 @@
 ---
 title: "Helm in production: lessons and gotchas"
-date: 2026-02-23
+date: 2026-02-27
 description: "Practical lessons from running Helm in production: CRD management, health checks, dry runs, schema validation, and OCI registries."
 avatar: tie-orange
 images:
